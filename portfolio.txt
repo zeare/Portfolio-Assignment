@@ -1,0 +1,43 @@
+using System;
+
+class CarInsuranceCalculator
+{
+    static void Main()
+    {
+        Console.WriteLine("Welcome to the Car Insurance Calculator!");
+
+        // Get user input for relevant details
+        Console.Write("Enter your age: ");
+        int age = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter the value of your car: ");
+        decimal carValue = decimal.Parse(Console.ReadLine());
+
+        // Calculate insurance premium based on a simple formula
+        decimal insurancePremium = CalculateInsurancePremium(age, carValue);
+
+        // Display the calculated premium
+        Console.WriteLine($"Your insurance premium is: ${insurancePremium}");
+
+        Console.ReadLine(); // Keep console window open for user to see the result
+    }
+
+    static decimal CalculateInsurancePremium(int age, decimal carValue)
+    {
+        // Simple formula for demonstration purposes, you might want to use a more complex one in a real project
+        decimal basePremium = 500;
+
+        // Adjust the premium based on age and car value
+        if (age < 25)
+        {
+            basePremium += 200;
+        }
+
+        if (carValue > 50000)
+        {
+            basePremium += 300;
+        }
+
+        return basePremium;
+    }
+}
